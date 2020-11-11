@@ -1,0 +1,7 @@
+{
+  "input": "minecraft:gravel",
+  "result": {
+    "id": "minecraft:sand",
+    "Count": 1
+  }
+}

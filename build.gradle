@@ -32,9 +32,12 @@ allprojects {
 		modImplementation 'io.github.cottonmc:LibGui:3.2.2+1.16.3'
 		modImplementation 'me.shedaniel.cloth:config-2:4.8.3'
 		modImplementation 'me.sargunvohra.mcmods:autoconfig1u:3.3.1'
+		include 'io.github.cottonmc:Jankson-Fabric:3.0.1+j1.2.0'
 		modCompileOnly 'me.shedaniel:RoughlyEnoughItems-api:5.8.3'
 		modRuntime 'me.shedaniel:RoughlyEnoughItems:5.8.3'
 		compileOnly 'com.google.code.findbugs:jsr305:+'
+		testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
+		testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
 	}
 	
 	processResources {
@@ -63,6 +66,10 @@ allprojects {
 		from("LICENSE") {
 			rename { "${it}_${project.archivesBaseName}"}
 		}
+	}
+
+	test {
+		useJUnitPlatform()
 	}
 }
 

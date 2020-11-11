@@ -12,5 +12,8 @@
     "client": [
       "io.github.boogiemonster1o1.exnihilosuperesse.init.Client"
     ]
-  }
+  },
+  "mixins": [
+    "ex-nihilo-superesse.mixins.json"
+  ]
 }
