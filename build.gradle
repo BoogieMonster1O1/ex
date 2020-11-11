@@ -1,0 +1,69 @@
+plugins {
+	id 'fabric-loom' version '0.5-SNAPSHOT'
+}
+
+allprojects {
+	repositories {
+		maven {
+        	url 'https://mod-buildcraft.com/maven'
+    	}
+    	jcenter()
+    	maven {
+        	url 'https://server.bbkr.space/artifactory/libs-release'
+    	}
+	}
+
+	apply plugin: 'fabric-loom'
+
+	group = 'io.github.boogiemonster1o1'
+
+	dependencies {
+		minecraft 'com.mojang:minecraft:1.16.4-rc1'
+		mappings 'net.fabricmc:yarn:1.16.4-rc1+build.1:v2'
+		modImplementation 'net.fabricmc:fabric-loader:0.10.6+build.214'
+		modImplementation 'net.fabricmc.fabric-api:fabric-api:0.25.1+build.416-1.16'
+		modImplementation 'alexiil.mc.lib:libblockattributes-all:0.7.0'
+		modImplementation 'teamreborn:energy:0.1.0'
+		modImplementation 'io.github.prospector:modmenu:1.14.7+build.9'
+		modImplementation 'io.github.cottonmc:LibGui:3.2.2+1.16.3'
+		modImplementation 'me.shedaniel.cloth:config-2:4.8.3'
+		modImplementation 'me.sargunvohra.mcmods:autoconfig1u:3.3.1'
+		modCompileOnly 'me.shedaniel:RoughlyEnoughItems-api:5.8.3'
+		modRuntime 'me.shedaniel:RoughlyEnoughItems:5.8.3'
+		compileOnly 'com.google.code.findbugs:jsr305:+'
+	}
+	
+	processResources {
+		inputs.property "version", project.version
+
+		filesMatching("fabric.mod.json") {
+			expand "version": project.version
+		}
+	}
+
+	tasks.withType(JavaCompile).configureEach {
+		def targetVersion = 8
+		if (JavaVersion.current().isJava9Compatible()) {
+			it.options.release = targetVersion
+		} else {
+			it.sourceCompatibility = JavaVersion.toVersion(targetVersion)
+			it.targetCompatibility = JavaVersion.toVersion(targetVersion)
+		}
+	}
+
+	java {
+		withSourcesJar()
+	}
+
+	jar {
+		from("LICENSE") {
+			rename { "${it}_${project.archivesBaseName}"}
+		}
+	}
+}
+
+dependencies {
+	subprojects.each {
+		implementation project("{it.path}")
+	}
+}
