@@ -11,7 +11,6 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-// TODO
 public class HammerItem extends ToolItem {
 	public HammerItem(ToolMaterial material, Settings settings) {
 		super(material, settings);

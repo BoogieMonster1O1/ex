@@ -7,6 +7,8 @@ import io.github.boogiemonster1o1.registerme.RegistryEntry;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.FoodComponent;
+import net.minecraft.item.FoodComponents;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.item.ItemGroup;
@@ -67,6 +69,12 @@ public class ModItems {
 
 	@RegistryEntry("netherite_hammer")
 	public static final Item NETHERITE_HAMMER = new HammerItem(ToolMaterials.NETHERITE, getSettings());
+
+	@RegistryEntry("silkworm")
+	public static final Item SILKWORM = new SilkwormItem(getSettings());
+
+	@RegistryEntry("cooked_silkworm")
+	public static final Item COOKED_SILKWORM = new Item(getSettings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.5F).build()));
 
 	private static ItemStack getIt() {
 		return new ItemStack(OAK_SEED);
