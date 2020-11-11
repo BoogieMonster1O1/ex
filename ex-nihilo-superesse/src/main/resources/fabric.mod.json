@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "ex-nihilo-superesse",
+  "version": "${version}",
+  "name": "Ex Nihilo Superesse",
+  "description": "Skyblock expansion mod",
+  "license": "MIT",
+  "entrypoints": {
+    "main": [
+      "io.github.boogiemonster1o1.exnihilosuperesse.init.Main"
+    ],
+    "client": [
+      "io.github.boogiemonster1o1.exnihilosuperesse.init.Client"
+    ]
+  }
+}

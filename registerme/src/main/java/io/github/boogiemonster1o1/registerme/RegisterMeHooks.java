@@ -32,7 +32,7 @@ public class RegisterMeHooks {
 					try {
 						//noinspection unchecked
 						T item = (T) field.get(null);
-						Registry.register(registry, new Identifier(registerMe.namespace(), field.getAnnotation(RegistryEntry.class).value()), item);
+						Registry.register(registry, new Identifier(registerMe.value(), field.getAnnotation(RegistryEntry.class).value()), item);
 					} catch (IllegalAccessException e) {
 						throw new AssertionError();
 					}
