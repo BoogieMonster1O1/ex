@@ -59,7 +59,7 @@ public class ModItems {
 	@RegistryEntry("iron_hammer")
 	public static final Item IRON_HAMMER = new HammerItem(ToolMaterials.IRON, getSettings());
 
-	@RegistryEntry("gold_Hammer")
+	@RegistryEntry("gold_hammer")
 	public static final Item GOLD_HAMMER = new HammerItem(ToolMaterials.GOLD, getSettings());
 
 	@RegistryEntry("diamond_hammer")
