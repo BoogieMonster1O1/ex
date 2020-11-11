@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "ex-nihilo-superesse:wooden_hammer",
+    "ex-nihilo-superesse:stone_hammer",
+    "ex-nihilo-superesse:iron_hammer",
+    "ex-nihilo-superesse:gold_hammer",
+    "ex-nihilo-superesse:diamond_hammer",
+    "ex-nihilo-superesse:netherite_hammer"
+  ]
+}
