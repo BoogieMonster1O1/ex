@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "registerme",
+  "version": "${version}",
+  "name": "RegisterMe",
+  "description": "Annotation based registering",
+  "authors": [
+    "BoogieMonster1O1"
+  ],
+  "license": "MIT"
+}

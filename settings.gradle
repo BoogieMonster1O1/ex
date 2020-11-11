@@ -9,3 +9,5 @@ pluginManagement {
 	}
 }
 
+include 'ex-nihilo-superesse'
+include 'registerme'

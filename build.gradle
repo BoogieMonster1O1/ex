@@ -2,6 +2,10 @@ plugins {
 	id 'fabric-loom' version '0.5-SNAPSHOT'
 }
 
+subprojects {
+	apply plugin: 'java'
+}
+
 allprojects {
 	repositories {
 		maven {
@@ -64,6 +68,6 @@ allprojects {
 
 dependencies {
 	subprojects.each {
-		implementation project("{it.path}")
+		implementation project("${it.path}")
 	}
 }
